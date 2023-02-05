@@ -1,22 +1,11 @@
-import { NativeModules, Platform } from 'react-native';
-
-const LINKING_ERROR =
-  `The package 'react-native-google-pay' doesn't seem to be linked. Make sure: \n\n` +
-  Platform.select({ ios: "- You have run 'pod install'\n", default: '' }) +
-  '- You rebuilt the app after installing the package\n' +
-  '- You are not using Expo Go\n';
-
-const GooglePay = NativeModules.GooglePay
-  ? NativeModules.GooglePay
-  : new Proxy(
-      {},
-      {
-        get() {
-          throw new Error(LINKING_ERROR);
-        },
-      }
-    );
-
-export function multiply(a: number, b: number): Promise<number> {
-  return GooglePay.multiply(a, b);
-}
+export { GooglePay, useGooglePay } from './GooglePay';
+export type {
+  AllowedCardAuthMethodsTypes,
+  AllowedCardNetworkTypes,
+  EnvironmentEnums,
+  EnvironmentType,
+  ICardPaymentMethod,
+  IRequestData,
+  ITokenizationSpecification,
+  ITransaction,
+} from './GooglePay/types';
