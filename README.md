@@ -1,13 +1,13 @@
-# react-native-google-pay
+# @adembacaj/react-native-google-pay
 
 Google Pay native modules for React-Native
 
 ## Installation
 
 ```sh
-npm install react-native-google-pay
+npm install @adembacaj/react-native-google-pay
 or
-yarn add react-native-google-pay
+yarn add @adembacaj/react-native-google-pay
 ```
 
 ## Android Extra Actions
@@ -40,7 +40,7 @@ buildscript {
 It is important to set environment when you entry Google Pay Screen, or in useEffect, before using isReadyToPay function
 
 ```js
-import { GooglePay } from 'react-native-google-pay';
+import { GooglePay } from '@adembacaj/react-native-google-pay';
 
 // ...
 
@@ -51,7 +51,7 @@ GooglePay.setEnvironment(GooglePay.environments.TEST);
 Before using Google Pay, if you want to enable/disable or show/hide Google Pay button, you need to call this function to check if device is ready to pay or not.
 
 ```js
-import { GooglePay } from 'react-native-google-pay';
+import { GooglePay } from '@adembacaj/react-native-google-pay';
 
 const _allowedCardNetworksExample: AllowedCardNetworkTypes[] = [
   'AMEX',
@@ -75,8 +75,8 @@ const isReady: boolean = await GooglePay.isReadyToPay(_allowedCardNetworksExampl
 You can use different payment gateways, but you can also use direct payment.
 
 ```js
-import { GooglePay } from 'react-native-google-pay';
-import type { IRequestData } from 'react-native-google-pay';
+import { GooglePay } from '@adembacaj/react-native-google-pay';
+import type { IRequestData } from '@adembacaj/react-native-google-pay';
 
 const _allowedCardNetworksExample: AllowedCardNetworkTypes[] = [
   'AMEX',
@@ -131,8 +131,8 @@ if (isReadyToPay) {
 You can use different payment gateways, in this example we will use Adyen.
 
 ```js
-import { GooglePay } from 'react-native-google-pay';
-import type { IRequestData } from 'react-native-google-pay';
+import { GooglePay } from '@adembacaj/react-native-google-pay';
+import type { IRequestData } from '@adembacaj/react-native-google-pay';
 
 const _allowedCardNetworksExample: AllowedCardNetworkTypes[] = [
   'AMEX',
